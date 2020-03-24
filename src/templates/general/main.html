@@ -26,8 +26,8 @@
 
         <menu>
 
-            <li class="sign_in_btn">
-                <a href="#">
+            <li class="menu_item">
+                <a class="sign_in_btn" href="#">
                     <i class="fas fa-user"></i>
                     Войти
                 </a>
@@ -45,13 +45,22 @@
 
     </div>
 
+    <div class="title_page_box">
+        {% if title == 'Home' %}
+        <h1 class="main_title_home_page">Future for APS</h1>
+        {% else %}
+        {% block titlePage %}
+        <h1 class="main_title">some title</h1>
+        {% endblock titlePage %}
+        {% endif %}
+    </div>
+
 </header>
 
 
 <main>
 
-    {% block main%}
-
+    {% block main %}
 
 
     {% endblock main %}
@@ -66,4 +75,6 @@
 
 
 </body>
+{% block scripts %}
+{% endblock scripts %}
 </html>

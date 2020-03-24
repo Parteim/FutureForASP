@@ -1,0 +1,75 @@
+{% extends 'general/main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock styles %}
+
+{% block main %}
+
+<section class="Ads">
+    <article class="ads_box">
+        <h2 class="ads_title">Ads</h2>
+        <div class="ads_content">
+            <p class="ads_text">
+                <span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aperiam illo modi sint. Aperiam dicta eos laboriosam quisquam sit. Accusamus ad
+                    aliquid autem consequuntur eos minima optio repellendus sed sunt tempora.
+                </span>
+            </p>
+            <div class="ads_image_box">
+                <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+            </div>
+        </div>
+
+    </article>
+</section>
+
+<section class="News">
+    <article class="news_box">
+        <div class="news_head">
+            <a href="#" class="news_link_icon"><i class="fas fa-newspaper"></i></a>
+            <a href="#" class="news_link"><h2 class="news_title">News</h2></a>
+            <p class="news_description">
+                <span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Aperiam enim esse exercitationem iusto maiores
+                </span>
+            </p>
+        </div>
+        <div class="news_content">
+            <div class="news_item">
+                <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                </div>
+                <div class="news_title-date">
+                    <h3 class="news_item_title">Some news</h3>
+                    <span class="news_item_date">some date</span>
+                </div>
+                <p class="news_item_text">
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi ea eaque esse,
+                        expedita fugiat fugit ipsa iure modi nam obcaecati
+                        officia quis, sint ullam ut veniam voluptas voluptatem.
+                    </span>
+                </p>
+            </div>
+            <div class="news_item">
+                <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                </div>
+                <div class="news_title-date">
+                    <h3 class="news_item_title">Some news</h3>
+                    <span class="news_item_date">some date</span>
+                </div>
+                <p class="news_item_text">
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi ea eaque esse,
+                        expedita fugiat fugit ipsa iure modi nam obcaecati
+                        officia quis, sint ullam ut veniam voluptas voluptatem.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </article>
+</section>
+
+{% endblock main %}
