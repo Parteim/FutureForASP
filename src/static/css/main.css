@@ -8,23 +8,29 @@ body {
     top: 0;
     left: 0;
 
+    margin: 0 auto;
+
     width: 100%;
     height: 80px;
 
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
     background-color: #f8f8f8;
+
+    transition: all .3s;
 
     z-index: 1;
 }
 
 menu {
-    width: 98%;
+    margin: 0;
+    padding: 0;
+
+    width: 70%;
     max-width: 1920px;
     height: 100%;
-
-    margin: 0 auto;
-    padding: 0;
 
     display: flex;
     align-items: center;
@@ -34,8 +40,8 @@ menu {
 .menu_link {
     position: relative;
 
-
     text-transform: uppercase;
+    font-size: 14px;
     font-weight: 500;
     color: #252424;
 }
@@ -81,13 +87,13 @@ menu {
     border-radius: 40px;
 
     font-weight: 500;
-    color: #f8f8f8;
+    color: #f5f5f5;
 
     transition: all .2s;
 }
 
 .sign_in_btn:hover {
-    color: #cdcdcd;
+    background-color: rgba(228, 68, 24, 0.79);
 }
 
 .title_page_box {
