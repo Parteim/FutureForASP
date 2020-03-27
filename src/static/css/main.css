@@ -110,12 +110,14 @@ menu {
 footer {
     position: relative;
     
-    padding: 80px 0;
+    padding: 80px 0 50px 0;
 
     background-color: #252424;
 }
 
 .footer_box {
+    position: relative;
+
     margin: 0 auto;
 
     width: 80%;
@@ -125,11 +127,21 @@ footer {
     justify-content: flex-start;
 }
 
-.map_site {
+.footer_box:after {
+    content: "";
 
+    position: absolute;
+
+    bottom: -20px;
+    left: -3%;
+
+    width: 106%;
+    height: 2px;
+
+    background-color: #da532c;
 }
 
-.map_sate_description {
+.map_sate_description, .our_contact_description{
     position: relative;
     
     font-weight: 700;
@@ -138,7 +150,7 @@ footer {
     color: #fff;
 }
 
-.map_sate_description:after {
+.map_sate_description:after , .our_contact_description:after{
     content: "";
 
     position: absolute;
@@ -152,7 +164,7 @@ footer {
     background-color: #da532c;
 }
 
-.map_site_item {
+.map_site_item{
     margin: 10px 0;
 }
 
@@ -161,12 +173,43 @@ footer {
     font-size: 14px;
     text-transform: uppercase;
     color: #a9a4a4;
+
+    transition: all .2s;
 }
 
 .map_site_link:hover {
-    
+    color: #da532c;
 }
 
 .our_contacts {
     margin: 0 50px;
+}
+
+.our_contact_item {
+    margin: 10px 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #a9a4a4;
+}
+
+.our_contact_item .fas {
+    margin-right: 10px;
+}
+
+.date_site {
+    margin-top: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #a9a4a4;
+}
+
+.date_site span {
+    color: #da532c;
 }
