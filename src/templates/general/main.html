@@ -28,8 +28,8 @@
             Войти
         </a>
         <menu>
-            <li class="menu_item"><a class="menu_link" href="#">Главная</a></li>
-            <li class="menu_item"><a class="menu_link" href="#">Конкурсы</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('general.home_page') }}">Главная</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('contests.contests_page') }}">Конкурсы</a></li>
             <li class="menu_item"><a class="menu_link" href="#">Конференции</a></li>
             <li class="menu_item"><a class="menu_link" href="#">worldskills</a></li>
             <li class="menu_item"><a class="menu_link" href="#">Экзамены</a></li>
@@ -42,13 +42,8 @@
     </div>
 
     <div class="title_page_box">
-        {% if title == 'Home' %}
-        <h1 class="main_title_home_page">Future for APS</h1>
-        {% else %}
         {% block titlePage %}
-        <h1 class="main_title">some title</h1>
         {% endblock titlePage %}
-        {% endif %}
     </div>
 
 </header>
@@ -72,8 +67,8 @@
 
             <p class="map_sate_description">КАРТА САЙТА</p>
             <ul class="map_site_list">
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>Главная</span></a></li>
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>Конкурсы</span></a></li>
+                <li class="map_site_item"><a href="{{ url_for('general.home_page') }}" class="map_site_link"><span>Главная</span></a></li>
+                <li class="map_site_item"><a href="{{ url_for('contests.contests_page') }}" class="map_site_link"><span>Конкурсы</span></a></li>
                 <li class="map_site_item"><a href="#" class="map_site_link"><span>Конференции</span></a></li>
                 <li class="map_site_item"><a href="#" class="map_site_link"><span>WorldSkills</span></a></li>
                 <li class="map_site_item"><a href="#" class="map_site_link"><span>Экзамены</span></a></li>
