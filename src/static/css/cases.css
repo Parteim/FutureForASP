@@ -1,0 +1,100 @@
+header {
+    position: relative;
+
+    height: 400px;
+
+    background-color: #e9e9e9;
+}
+
+.title_page_box {
+    top: calc(50% + 20px);
+}
+
+.main_title_case_page {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #252424;
+}
+
+.Cases {
+    padding: 80px 0;
+
+}
+
+.cases_lis {
+    margin: 0 auto;
+
+    width: 80%;
+}
+
+.cases_item {
+    padding: 10px;
+    margin: 20px 0;
+
+    border-radius: 5px;
+
+    box-shadow: 0 3px 10px rgba(27, 27, 27, 0.29);
+
+    transition: all .4s;
+}
+
+.cases_item:hover {
+    box-shadow: 1px 5px 10px rgba(27, 27, 27, 0.4);
+}
+
+.case_item_content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.case_item_link {
+    position: relative;
+    margin: 20px 0;
+
+    text-transform: uppercase;
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: #252424;
+}
+
+.case_item_title {
+    text-align: center;
+}
+
+.case_item_date {
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    color: #888686;
+}
+
+.case_item_header {
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.case_item_header p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #252424;
+}
+
+.case_item_header p span{
+    color: #e44418;
+}
+
+.case_item_description {
+    padding: 10px 20px;
+
+    color: #403e3e;
+}
+

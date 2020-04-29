@@ -10,7 +10,7 @@ header {
     top: calc(50% + 20px);
 }
 
-.main_title_contests_page {
+.main_title_conferences_page {
     font-size: 50px;
     font-weight: 700;
     text-transform: uppercase;
@@ -18,11 +18,12 @@ header {
     color: #252424;
 }
 
-.Contests {
+
+.Conference {
     padding: 80px 0;
 }
 
-.contest_box {
+.conference_box {
     position: relative;
 
     margin: 0 auto;
@@ -35,7 +36,7 @@ header {
     flex-direction: column;
 }
 
-.contest_main_title {
+.conference_main_title {
     position: relative;
 
     margin: 20px 0;
@@ -46,7 +47,7 @@ header {
     color: #252424;
 }
 
-.contest_main_title:after {
+.conference_main_title:after {
     content: "";
 
     position: absolute;
@@ -61,7 +62,7 @@ header {
     background-color: #da532c;
 }
 
-.slider_contest {
+.slider_conference {
     position: relative;
 
     padding: 30px 0;
@@ -69,7 +70,7 @@ header {
     width: 100%;
 }
 
-.contest_item {
+.conference_item {
     width: 100%;
 
     display: flex;
@@ -78,7 +79,7 @@ header {
 
 }
 
-.contest_item_img_box {
+.conference_item_img_box {
     position: relative;
 
     width: 40%;
@@ -86,11 +87,11 @@ header {
     overflow: hidden;
 }
 
-.contest_item_img {
+.conference_item_img {
     width: 110%;
 }
 
-.contest_item_content {
+.conference_item_content {
     width: 50%;
 
     display: flex;
@@ -99,7 +100,7 @@ header {
     flex-direction: column;
 }
 
-.contest_item_title {
+.conference_item_title {
     position: relative;
 
     margin: 20px 0;
@@ -109,11 +110,11 @@ header {
     text-transform: uppercase;
 }
 
-.contest_item_title a {
+.conference_item_title a {
     color: #313132;
 }
 
-.contest_item_title:after {
+.conference_item_title:after {
     content: "";
 
     position: absolute;
@@ -130,11 +131,11 @@ header {
 }
 
 
-.contest_item_description {
+.conference_item_description {
     color: #5b5959;
 }
 
-.contest_item_link_learn_more {
+.conference_item_link_learn_more {
     margin: 30px 0;
     padding: 5px 10px;
 
@@ -150,11 +151,11 @@ header {
     transition: all .2s;
 }
 
-.contest_item_link_learn_more:hover {
+.conference_item_link_learn_more:hover {
     background-color: rgba(228, 68, 24, 0.79);
 }
 
-.all_contests {
+.all_conferences {
     margin: 15px 0;
     padding: 7px 13px;
 
@@ -171,16 +172,22 @@ header {
     transition: all .2s;
 }
 
-.all_contests:hover {
+.all_conferences:hover {
     background-color: rgba(228, 68, 24, 0.79);
 }
 
 
-.Past_contest {
+
+
+.Past_conference {
     padding: 80px 0;
+
+    background-color: #f5f5f5;
 }
 
-.past_contest_box {
+.past_conference_box {
+    position: relative;
+
     margin: 0 auto;
 
     width: 75%;
@@ -191,7 +198,7 @@ header {
     flex-direction: column;
 }
 
-.past_contest_main_title {
+.past_conference_main_title {
     position: relative;
 
     margin: 20px 0;
@@ -202,7 +209,7 @@ header {
     color: #252424;
 }
 
-.past_contest_main_title:after {
+.past_conference_main_title:after {
     content: "";
 
     position: absolute;
@@ -217,76 +224,100 @@ header {
     background-color: #da532c;
 }
 
-.past_contest_list {
+.past_slider_conference {
+    position: relative;
+
+    padding: 30px 0;
+
     width: 100%;
 }
 
-.past_contest_item {
-    margin: 20px 0;
-
+.past_conference_item {
     width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
+
 }
 
-.past_contest_item_image {
+.past_conference_item_img_box {
     position: relative;
 
-    width: 200px;
-    height: 200px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
+    width: 40%;
 
     overflow: hidden;
 }
 
-.past_contest_item_image img {
-    width: 180%;
+.past_conference_item_img {
+    width: 110%;
 }
 
-.past_contest_item_content {
-    position: relative;
-
-    width: 70%;
+.past_conference_item_content {
+    width: 50%;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-.past_contest_item_title {
+.past_conference_item_title {
+    position: relative;
+
     margin: 20px 0;
 
-    text-transform: uppercase;
     font-size: 23px;
-
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.past_contest_item_title a {
-    color: #252424;
+.past_conference_item_title a {
+    color: #313132;
 }
 
-.past_contest_item_date {
+.past_conference_item_title:after {
+    content: "";
+
     position: absolute;
 
-    right: 10px;
-    top: 10px;
+    bottom: -5px;
+    left: 50%;
 
-    font-size: 14px;
-    color: #888686;
+    transform: translate(-50%);
+
+    width: 40%;
+    height: 2px;
+
+    background-color: #da532c;
 }
 
-.past_contest_item_text {
+
+.past_conference_item_description {
     color: #5b5959;
 }
 
-.all_past_contests {
+.past_conference_item_link_learn_more {
+    margin: 30px 0;
+    padding: 5px 10px;
+
+    width: 200px;
+
+    border-radius: 40px;
+    background-color: #da532c;
+
+    font-size: 16px;
+    text-align: center;
+    color: #252525;
+
+    transition: all .2s;
+}
+
+.past_conference_item_link_learn_more:hover {
+    background-color: rgba(228, 68, 24, 0.79);
+}
+
+.all_past_conferences {
     margin: 15px 0;
     padding: 7px 13px;
 
@@ -303,6 +334,6 @@ header {
     transition: all .2s;
 }
 
-.all_past_contests:hover {
+.all_past_conferences:hover {
     background-color: rgba(228, 68, 24, 0.79);
 }

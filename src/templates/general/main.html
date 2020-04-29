@@ -30,11 +30,11 @@
         <menu>
             <li class="menu_item"><a class="menu_link" href="{{ url_for('general.home_page') }}">Главная</a></li>
             <li class="menu_item"><a class="menu_link" href="{{ url_for('contests.contests_page') }}">Конкурсы</a></li>
-            <li class="menu_item"><a class="menu_link" href="#">Конференции</a></li>
-            <li class="menu_item"><a class="menu_link" href="#">worldskills</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('conferences.conferences_page') }}">Конференции</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('world_skills.world_skills_page') }}">WorldSkills</a></li>
             <li class="menu_item"><a class="menu_link" href="#">Экзамены</a></li>
-            <li class="menu_item"><a class="menu_link" href="#">Кейсы</a></li>
-            <li class="menu_item"><a class="menu_link" href="#">Форум</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('cases.cases_page') }}">Кейсы</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('forum.forum_page') }}">Форум</a></li>
             <li class="menu_item"><a class="menu_link" href="#">Галерея</a></li>
 
         </menu>
@@ -69,11 +69,11 @@
             <ul class="map_site_list">
                 <li class="map_site_item"><a href="{{ url_for('general.home_page') }}" class="map_site_link"><span>Главная</span></a></li>
                 <li class="map_site_item"><a href="{{ url_for('contests.contests_page') }}" class="map_site_link"><span>Конкурсы</span></a></li>
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>Конференции</span></a></li>
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>WorldSkills</span></a></li>
+                <li class="map_site_item"><a href="{{ url_for('conferences.conferences_page') }}" class="map_site_link"><span>Конференции</span></a></li>
+                <li class="map_site_item"><a href="{{ url_for('world_skills.world_skills_page') }}" class="map_site_link"><span>WorldSkills</span></a></li>
                 <li class="map_site_item"><a href="#" class="map_site_link"><span>Экзамены</span></a></li>
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>Кейсы</span></a></li>
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>Форум</span></a></li>
+                <li class="map_site_item"><a href="{ url_for('cases.cases_page') }}" class="map_site_link"><span>Кейсы</span></a></li>
+                <li class="map_site_item"><a href="{{ url_for('forum.forum_page') }}" class="map_site_link"><span>Форум</span></a></li>
                 <li class="map_site_item"><a href="#" class="map_site_link"><span>Галерея</span></a></li>
             </ul>
 

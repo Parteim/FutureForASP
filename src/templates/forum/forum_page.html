@@ -1,0 +1,44 @@
+{% extends 'general/main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+{% endblock styles %}
+
+{% block titlePage %}
+<h1 class="main_title_case_page">Forum</h1>
+{% endblock titlePage %}
+
+{% block main %}
+
+<section class="Forum">
+
+    <div class="forum_menu">
+        <form action="#" class="search_post_form">
+            <label for="search_post">
+                <input type="text" id="search_post">
+                <button type="submit" class="button_search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </label>
+        </form>
+        <a href="#" class="create_post">Create post <span><i class="fas fa-pen-alt"></i></span></a>
+    </div>
+
+    <ul class="posts_list">
+        <li class="post">
+            <h2 class="post_title"></h2>
+            <div class="post_content">
+                <div class="post_text"></div>
+                <ul class="post_img_list">
+                    <li class=""><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="" class="post_image_item"></li>
+                    <li class=""><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="" class="post_image_item"></li>
+                    <li class=""><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="" class="post_image_item"></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+</section>
+
+
+{% endblock main %}

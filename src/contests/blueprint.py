@@ -6,4 +6,4 @@ app = Blueprint(NAME_APP, __name__)
 
 @app.route('/')
 def contests_page():
-    return render_template('contests/contests.html', title='Contests')
+    return render_template(f'{NAME_APP}/contests.html', title='Contests')

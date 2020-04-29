@@ -5,7 +5,7 @@
 {% endblock styles %}
 
 {% block titlePage %}
-<h1 class="main_title_contests_page">Contests</h1>
+<h1 class="main_title_contests_page">World skills</h1>
 {% endblock titlePage %}
 
 {% block main %}
@@ -21,7 +21,7 @@
                 </div>
                 <div class="contest_item_content">
                     <h3 class="contest_item_title">
-                        Lorem ipsum dolor sit amet, consectetur
+                        <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
                     </h3>
                     <p class="contest_item_description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -46,9 +46,11 @@
 
         <ul class="past_contest_list">
             <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="../../static/img/recipe__image.png" alt=""></div>
+                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
                 <div class="past_contest_item_content">
-                    <h3 class="past_contest_item_title">Some past contest</h3>
+                    <h3 class="past_contest_item_title">
+                        <a href="">Some past contest</a>
+                    </h3>
                     <p class="past_contest_item_text">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Adipisci aliquid cupiditate debitis, deserunt dicta distinctio,
@@ -59,9 +61,11 @@
                 </div>
             </li>
             <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="../../static/img/News__image.png" alt=""></div>
+                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""></div>
                 <div class="past_contest_item_content">
-                    <h3 class="past_contest_item_title">Some past contest</h3>
+                    <h3 class="past_contest_item_title">
+                        <a href="">Some past contest</a>
+                    </h3>
                     <p class="past_contest_item_text">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Adipisci aliquid cupiditate debitis, deserunt dicta distinctio,
@@ -72,9 +76,11 @@
                 </div>
             </li>
             <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="../../static/img/recipe__image.png" alt=""></div>
+                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
                 <div class="past_contest_item_content">
-                    <h3 class="past_contest_item_title">Some past contest</h3>
+                    <h3 class="past_contest_item_title">
+                        <a href="#">Some past contest</a>
+                    </h3>
                     <p class="past_contest_item_text">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Adipisci aliquid cupiditate debitis, deserunt dicta distinctio,
