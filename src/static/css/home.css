@@ -237,6 +237,12 @@ header {
     font-weight: 500;
     font-size: 21px;
     color: #252424;
+
+    transition: all .2s;
+}
+
+.news_item_title:hover {
+    color: #403e3e;
 }
 
 .news_item_date {

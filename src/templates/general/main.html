@@ -16,17 +16,21 @@
 
     {% endblock styles %}
 
-    <title>{{ title }}</title>
+    <title>
+        {% block title %}
+        {{ title }}
+        {% endblock title %}
+    </title>
 </head>
 <body>
 
 <header>
 
     <div class="top_menu">
-        <a class="sign_in_btn" href="#">
+        <button class="sign_in_btn">
             <i class="fas fa-user"></i>
             Войти
-        </a>
+        </button>
         <menu>
             <li class="menu_item"><a class="menu_link" href="{{ url_for('general.home_page') }}">Главная</a></li>
             <li class="menu_item"><a class="menu_link" href="{{ url_for('contests.contests_page') }}">Конкурсы</a></li>
@@ -35,7 +39,7 @@
             <li class="menu_item"><a class="menu_link" href="#">Экзамены</a></li>
             <li class="menu_item"><a class="menu_link" href="{{ url_for('cases.cases_page') }}">Кейсы</a></li>
             <li class="menu_item"><a class="menu_link" href="{{ url_for('forum.forum_page') }}">Форум</a></li>
-            <li class="menu_item"><a class="menu_link" href="#">Галерея</a></li>
+            <li class="menu_item"><a class="menu_link" href="{{ url_for('gallery.gallery_page') }}">Галерея</a></li>
 
         </menu>
 
@@ -74,7 +78,7 @@
                 <li class="map_site_item"><a href="#" class="map_site_link"><span>Экзамены</span></a></li>
                 <li class="map_site_item"><a href="{ url_for('cases.cases_page') }}" class="map_site_link"><span>Кейсы</span></a></li>
                 <li class="map_site_item"><a href="{{ url_for('forum.forum_page') }}" class="map_site_link"><span>Форум</span></a></li>
-                <li class="map_site_item"><a href="#" class="map_site_link"><span>Галерея</span></a></li>
+                <li class="map_site_item"><a href="{{ url_for('gallery.gallery_page') }}" class="map_site_link"><span>Галерея</span></a></li>
             </ul>
 
         </div>
@@ -96,8 +100,45 @@
 
 </footer>
 
+<section id="Sign_in">
+    <form action="" class="sign_in_form sign_form">
+        <h3 class="sign_in_title">Sign in</h3>
+        <div class="sign_in_form_container">
+            <label for="sign_in_email"></label>
+            <label for="sign_in_password"></label>
+            <input placeholder="E-mail" type="email" id="sign_in_email">
+            <input placeholder="password" type="password" id="sign_in_password">
+        </div>
+        <button type="submit" id="sign_in_btn">Sign in <i class="fas fa-sign-in-alt"></i></button>
+    </form>
+    <form action="" class="sign_up_form sign_form">
+        <h3 class="sign_up_title">Register</h3>
+        <div class="sign_up_form_container">
+            <label for="email_address"></label>
+            <label for="first_name"></label>
+            <label for="last_name"></label>
+            <label for="password"></label>
+            <label for="repeat_password"></label>
+            <input placeholder="E-mail" type="email" id="email_address">
+            <input placeholder="First name" type="text" id="first_name">
+            <input placeholder="Last name" type="text" id="last_name">
+            <label id="you_are_student_label" for="you_are_student">You are student?</label>
+            <input type="checkbox" id="you_are_student">
+            <label id="label_course" for="course">Course <input min="0" max="4" type="number" id="course"></label>
+            <input placeholder="Password" type="text" id="password">
+            <input placeholder="Password again " type="text" id="repeat_password">
+        </div>
+        <button id="create_account">Register <i class="fas fa-user-plus"></i></button>
+    </form> 
+    <button id="close_sign_in_form"><i class="fas fa-times"></i></button>
+    <button id="to_register">
+        <i class="fas fa-user-plus"></i>
+    </button>
+</section>
 
 </body>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% block scripts %}
+
 {% endblock scripts %}
 </html>

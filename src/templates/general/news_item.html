@@ -1,0 +1,48 @@
+{% extends 'general/main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news_item.css') }}">
+{% endblock styles %}
+
+
+{% block main %}
+
+<section class="News">
+
+    <div class="news_content">
+        <div class="news_text_box">
+            <h2 class="news_title">Some news</h2>
+            <p class="news_text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis consectetur culpa cum
+                deleniti eveniet exercitationem explicabo id ipsam maxime, natus nisi quasi, ratione recusandae rerum
+                saepe voluptatem, voluptates voluptatum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis consectetur culpa cum
+                deleniti eveniet exercitationem explicabo id ipsam maxime, natus nisi quasi, ratione recusandae rerum
+                saepe voluptatem, voluptates voluptatum.
+            </p>
+
+            <span class="news_date">12.12.20</span>
+
+        </div>
+        <ul class="news_image_list">
+            <li class="news_image_item">
+                <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""/>
+            </li>
+            <li class="news_image_item">
+                <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""/>
+            </li>
+            <li class="news_image_item">
+                <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""/>
+            </li>
+            <li class="news_image_item">
+                <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""/>
+            </li>
+            <li class="news_image_item">
+                <img src="{{ url_for('static', filename='img/News__image.png') }}"  alt=""/>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+{% endblock main %}

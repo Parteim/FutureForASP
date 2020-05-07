@@ -1,58 +1,51 @@
-{% extends 'home/main.html' %}
-{% load static %}
+{% extends 'general/main.html' %}
 
-{% block link__css %}
-<link rel="stylesheet" href="{% static 'main/news.css' %}">
-<link rel="stylesheet" href="{% static 'main/adaptive_CSS/news.css'%}">
-{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+{% endblock styles %}
 
+{% block titlePage %}
+<h1 class="main_title_news_page">News</h1>
+{% endblock titlePage %}
 
-{% block title__section %}
-
-<div>
-    <h1 class="header__main__title__news">Новости</h1>
-</div>
-
-{% endblock %}
-
-
-{% block main_section %}
-
+{% block main %}
 
 <section class="News">
 
-    <div class="container">
+    <ul class="news_list">
+        <li class="news_item">
+            <a href="{{ url_for('general.news_item', id='1') }}" class="news_item_link">
+                <h2 class="news_title">Some title of news</h2>
+            </a>
+            <p class="news_item_description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi assumenda commodi consectetur eos
+                et eum facilis id in libero minima modi molestias perferendis porro quod, quos sequi sit unde.
+            </p>
+            <span class="news_item_date">12.12.20</span>
+        </li>
 
-        {% for news in News %}
-
-
-        <div class="news__item">
-            <div class="news__image__box">
-                <a href="{% url 'news-instance' news.id %}">
-                    <img class="news__image" src="{{ news.img.url }}" alt="{{ news.title }}">
-                </a>
-            </div>
-            <div class="news__info__box">
-                <div class="news__box__title">
-                    <a href="{% url 'news-instance' news.id %}">
-                        <h2 class="news__title">
-                            {{ news.title }}
-                        </h2>
-                    </a>
-                    <p class="date__news__publication">{{ news.date|date:"j F Y" }}</p>
-                </div>
-                <p class="news__text">
-                    {{ news.text }}
-                </p>
-            </div>
-        </div>
-
-
-        {% endfor %}
-
-    </div>
+        <li class="news_item">
+            <a href="{{ url_for('general.news_item', id='2') }}" class="news_item_link">
+                <h2 class="news_title">Some title of news</h2>
+            </a>
+            <p class="news_item_description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi assumenda commodi consectetur eos
+                et eum facilis id in libero minima modi molestias perferendis porro quod, quos sequi sit unde.
+            </p>
+            <span class="news_item_date">12.12.20</span>
+        </li>
+        <li class="news_item">
+            <a href="{{ url_for('general.news_item', id='2') }}" class="news_item_link">
+                <h2 class="news_title">Some title of news</h2>
+            </a>
+            <p class="news_item_description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi assumenda commodi consectetur eos
+                et eum facilis id in libero minima modi molestias perferendis porro quod, quos sequi sit unde.
+            </p>
+            <span class="news_item_date">12.12.20</span>
+        </li>
+    </ul>
 
 </section>
 
-
-{% endblock %}
+{% endblock main %}

@@ -15,24 +15,154 @@
     <div class="forum_menu">
         <form action="#" class="search_post_form">
             <label for="search_post">
-                <input type="text" id="search_post">
-                <button type="submit" class="button_search">
-                    <i class="fas fa-search"></i>
-                </button>
             </label>
+            <input type="text" id="search_post">
+            <button type="submit" class="button_search">
+                <i class="fas fa-search"></i>
+            </button>
+
         </form>
-        <a href="#" class="create_post">Create post <span><i class="fas fa-pen-alt"></i></span></a>
+        <button id="create_post_btn">Create post <span><i class="fas fa-pen-alt"></i></span></button>
     </div>
 
     <ul class="posts_list">
         <li class="post">
-            <h2 class="post_title"></h2>
+            <div class="author_box">
+                <a class="author_link" href="#">
+                    <div class="author_img_box">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                    </div>
+                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
+                </a>
+            </div>
+            <a class="post_link" href="#">
+                <h2 class="post_title">Some title of post</h2>
+            </a>
+            <p class="post_date_created">12.12.20</p>
             <div class="post_content">
-                <div class="post_text"></div>
+                <div class="post_text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
+                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
+                    totam, ullam vel vitae voluptas.
+                </div>
                 <ul class="post_img_list">
-                    <li class=""><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="" class="post_image_item"></li>
-                    <li class=""><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="" class="post_image_item"></li>
-                    <li class=""><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="" class="post_image_item"></li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
+                             >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                             >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                             >
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="post">
+            <div class="author_box">
+                <a class="author_link" href="#">
+                    <div class="author_img_box">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                    </div>
+                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
+                </a>
+            </div>
+            <a class="post_link" href="#">
+                <h2 class="post_title">Some title of post</h2>
+            </a>
+            <p class="post_date_created">12.12.20</p>
+            <div class="post_content">
+                <div class="post_text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
+                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
+                    totam, ullam vel vitae voluptas.
+                </div>
+                <ul class="post_img_list">
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
+                        >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                        >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                        >
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="post">
+            <div class="author_box">
+                <a class="author_link" href="#">
+                    <div class="author_img_box">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                    </div>
+                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
+                </a>
+            </div>
+            <a class="post_link" href="#">
+                <h2 class="post_title">Some title of post</h2>
+            </a>
+            <p class="post_date_created">12.12.20</p>
+            <div class="post_content">
+                <div class="post_text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
+                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
+                    totam, ullam vel vitae voluptas.
+                </div>
+                <ul class="post_img_list">
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
+                        >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                        >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                        >
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="post">
+            <div class="author_box">
+                <a class="author_link" href="#">
+                    <div class="author_img_box">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                    </div>
+                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
+                </a>
+            </div>
+            <a class="post_link" href="#">
+                <h2 class="post_title">Some title of post</h2>
+            </a>
+            <p class="post_date_created">12.12.20</p>
+            <div class="post_content">
+                <div class="post_text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
+                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
+                    totam, ullam vel vitae voluptas.
+                </div>
+                <ul class="post_img_list">
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
+                        >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                        >
+                    </li>
+                    <li class="post_image_item">
+                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
+                        >
+                    </li>
                 </ul>
             </div>
         </li>
@@ -40,5 +170,21 @@
 
 </section>
 
+<section id="Create_post" class="Create_post">
+    <h3 class="create_post_form_title">Create post</h3>
+    <form action="#" class="create_post_form">
+        <label for="title_create_post" class="title_create_post"></label>
+        <label for="text_create_post" class="label text_create_post"></label>
+        <input placeholder="Title" type="text" id="title_create_post">
+        <textarea placeholder="Text" id="text_create_post"></textarea>
+        <button id="attach_item_btn">Attach item <i class="fas fa-paperclip"></i></button>
+        <button type="submit" class="agree_create_post">Create</button>
+    </form>
+    <button id="close_create_post_form"><i class="fas fa-times"></i></button>
+</section>
 
 {% endblock main %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/forum.js') }}"></script>
+{% endblock scripts %}

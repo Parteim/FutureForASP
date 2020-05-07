@@ -1,0 +1,42 @@
+{% extends 'general/main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+{% endblock styles %}
+
+{% block titlePage %}
+<h1 class="main_title_gallery_page">Gallery</h1>
+{% endblock titlePage %}
+
+{% block main %}
+
+<section class="Gallery">
+    <ul class="gallery_list">
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+        </li>
+        <li class="gallery_item">
+            <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+        </li>
+    </ul>
+</section>
+
+{% endblock main %}

@@ -17,3 +17,11 @@ ul, menu, nav {
 
     padding: 0;
 }
+
+button, input {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
