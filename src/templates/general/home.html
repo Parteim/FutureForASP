@@ -46,7 +46,7 @@
                 <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
                 </div>
                 <div class="news_title-date">
-                    <a href="#"><h3 class="news_item_title">Some news</h3></a>
+                    <a href="{{ url_for('general.news_item', id=1) }}"><h3 class="news_item_title">Some news</h3></a>
                     <span class="news_item_date">some date</span>
                 </div>
                 <p class="news_item_text">
@@ -61,7 +61,7 @@
                 <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
                 </div>
                 <div class="news_title-date">
-                    <a href="#"><h3 class="news_item_title">Some news</h3></a>
+                    <a href="{{ url_for('general.news_item', id=2) }}"><h3 class="news_item_title">Some news</h3></a>
                     <span class="news_item_date">some date</span>
                 </div>
                 <p class="news_item_text">
@@ -82,8 +82,8 @@
         <div class="recipe_image_box">
             <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
         <div class="recipe_content">
-            <a href="#" class="recipes_link-icon"><i class="fas fa-concierge-bell"></i></a>
-            <a href="#" class="recipes_link-title"><h2 class="recipe_title">Some recipe</h2></a>
+            <a href="{{ url_for('general.recipes') }}" class="recipes_link-icon"><i class="fas fa-concierge-bell"></i></a>
+            <a href="{{ url_for('general.recipes_item', id=1) }}" class="recipes_link-title"><h2 class="recipe_title">Some recipe</h2></a>
             <p class="recipe_text">
                 <span>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -92,41 +92,41 @@
                     eveniet, illo perferendis vel?
                 </span>
             </p>
-            <a href="#" class="recipes_link">More recipes</a>
+            <a href="{{ url_for('general.recipes') }}" class="recipes_link">More recipes</a>
         </div>
     </article>
 </section>
 
 <section class="Gallery">
     <article class="gallery_box">
-        <a href="#" class="gallery_link-icon"><i class="fas fa-images"></i></a>
-        <a href="#" class="gallery_link">
+        <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_link-icon"><i class="fas fa-images"></i></a>
+        <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_link">
             <h2 class="gallery_title">Gallery</h2>
         </a>
         <div class="gallery_content">
             <div class="gallery_image_box">
-                <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-                <a href="#" class="gallery_image_link"></a>
+                <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+                <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_image_link"></a>
             </div>
             <div class="gallery_image_box">
-                <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                <a href="#" class="gallery_image_link"></a>
+                <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_image_link"></a>
             </div>
             <div class="gallery_image_box">
-                <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-                <a href="#" class="gallery_image_link"></a>
+                <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+                <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_image_link"></a>
             </div>
             <div class="gallery_image_box">
-                <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                <a href="#" class="gallery_image_link"></a>
+                <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_image_link"></a>
             </div>
             <div class="gallery_image_box">
-                <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-                <a href="#" class="gallery_image_link"></a>
+                <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
+                <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_image_link"></a>
             </div>
             <div class="gallery_image_box">
-                <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                <a href="#" class="gallery_image_link"></a>
+                <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_image_link"></a>
             </div>
         </div>
     </article>

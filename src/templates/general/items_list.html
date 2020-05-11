@@ -1,0 +1,34 @@
+{% extends 'general/main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/items_list.css') }}">
+{% endblock styles %}
+
+{% block titlePage %}
+<h1 class="main_title_items_page">{{ title }}</h1>
+{% endblock titlePage %}
+
+{% block main %}
+
+<section class="Items">
+
+    <ul class="items_list">
+        {% block items_list %}
+        <li class="item">
+            <a href="{{ url_for('general.news_item', id='1') }}" class="item_link">
+                <h2 class="item_title">Some title of news</h2>
+            </a>
+            <p class="item_description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi assumenda commodi consectetur eos
+                et eum facilis id in libero minima modi molestias perferendis porro quod, quos sequi sit unde.
+            </p>
+            {% block items_date %}
+            <span class="item_date">12.12.20</span>
+            {% endblock items_date %}
+        </li>
+        {% endblock items_list %}
+    </ul>
+
+</section>
+
+{% endblock main %}

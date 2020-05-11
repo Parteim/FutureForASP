@@ -1,0 +1,68 @@
+{% extends 'general/main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recipes.css') }}">
+{% endblock styles %}
+
+{% block titlePage %}
+<h1 class="main_title_recipes_page">Recipes</h1>
+{% endblock titlePage %}
+
+{% block main %}
+
+<section class="Recipes">
+
+    <ul class="recipes_list">
+        <li class="recipe_item">
+            <div class="recipe_image_box">
+                <img alt="" src="{{ url_for('static', filename='img/recipe__image.png') }}"/>
+            </div>
+            <div class="recipe_content">
+                <a href="{{ url_for('general.recipes_item', id=1) }}" class="recipe_title_link">
+                    <h2 class="recipe_title">Some recipe</h2>
+                </a>
+                <p class="recipe_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, deleniti id odio omnis
+                    quos suscipit tempore. Blanditiis, consequatur fugiat harum itaque magni mollitia nihil
+                    obcaecati optio perspiciatis, quibusdam, soluta voluptatem.Accusantium animi
+                    consequatur eum iste molestias numquam porro repellat, repudiandae velit!
+                </p>
+            </div>
+        </li>
+        <li class="recipe_item">
+            <div class="recipe_image_box">
+                <img alt="" src="{{ url_for('static', filename='img/recipe__image.png') }}"/>
+            </div>
+            <div class="recipe_content">
+                <a href="{{ url_for('general.recipes_item', id=1) }}" class="recipe_title_link">
+                    <h2 class="recipe_title">Some recipe</h2>
+                </a>
+                <p class="recipe_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, deleniti id odio omnis
+                    quos suscipit tempore. Blanditiis, consequatur fugiat harum itaque magni mollitia nihil
+                    obcaecati optio perspiciatis, quibusdam, soluta voluptatem.Accusantium animi
+                    consequatur eum iste molestias numquam porro repellat, repudiandae velit!
+                </p>
+            </div>
+        </li>
+        <li class="recipe_item">
+            <div class="recipe_image_box">
+                <img alt="" src="{{ url_for('static', filename='img/recipe__image.png') }}"/>
+            </div>
+            <div class="recipe_content">
+                <a href="{{ url_for('general.recipes_item', id=1) }}" class="recipe_title_link">
+                    <h2 class="recipe_title">Some recipe</h2>
+                </a>
+                <p class="recipe_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, deleniti id odio omnis
+                    quos suscipit tempore. Blanditiis, consequatur fugiat harum itaque magni mollitia nihil
+                    obcaecati optio perspiciatis, quibusdam, soluta voluptatem.Accusantium animi
+                    consequatur eum iste molestias numquam porro repellat, repudiandae velit!
+                </p>
+            </div>
+        </li>
+    </ul>
+
+</section>
+
+{% endblock main %}

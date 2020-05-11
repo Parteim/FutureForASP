@@ -112,6 +112,12 @@ header {
 
 .contest_item_title a {
     color: #313132;
+
+    transition: all .2s;
+}
+
+.contest_item_title:hover a {
+    color: #615e5e;
 }
 
 .contest_item_title:after {
@@ -274,6 +280,12 @@ header {
 
 .past_contest_item_title a {
     color: #313132;
+    
+    transition: all .2s;
+}
+
+.past_contest_item_title:hover a {
+    color: #615e5e;
 }
 
 .past_contest_item_title:after {

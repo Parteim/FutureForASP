@@ -59,6 +59,12 @@ header {
     font-size: 21px;
     letter-spacing: 1px;
     color: #252424;
+    
+    transition: all .2s;
+}
+
+.case_item_link:hover {
+    color: #615e5e;
 }
 
 .case_item_title {

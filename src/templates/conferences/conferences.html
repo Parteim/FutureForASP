@@ -21,7 +21,7 @@
                 </div>
                 <div class="conference_item_content">
                     <h3 class="conference_item_title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
+                        <a href="{{ url_for('conferences.conferences_instance', id=1) }}">Lorem ipsum dolor sit amet, consectetur</a>
                     </h3>
                     <p class="conference_item_description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -29,11 +29,11 @@
                         cumque excepturi labore quo ratione rem sequi?
                         Alias eveniet ipsum nisi, non perspiciatis porro quia. Quod.
                     </p>
-                    <a href="#" class="conference_item_link_learn_more">Learn more</a>
+                    <a href="{{ url_for('conferences.conferences_instance', id=1) }}" class="conference_item_link_learn_more">Learn more</a>
                 </div>
             </div>
         </div>
-        <a href="#" class="all_conferences">All conferences</a>
+        <a href="{{ url_for('conferences.conferences_list') }}" class="all_conferences">All conferences</a>
     </div>
 
 </section>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="past_conference_item_content">
                     <h3 class="past_conference_item_title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
+                        <a href="{{ url_for('conferences.conferences_instance', id=1) }}">Lorem ipsum dolor sit amet, consectetur</a>
                     </h3>
                     <p class="past_conference_item_description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -58,11 +58,11 @@
                         cumque excepturi labore quo ratione rem sequi?
                         Alias eveniet ipsum nisi, non perspiciatis porro quia. Quod.
                     </p>
-                    <a href="#" class="past_conference_item_link_learn_more">Learn more</a>
+                    <a href="{{ url_for('conferences.conferences_instance', id=1) }}" class="past_conference_item_link_learn_more">Learn more</a>
                 </div>
             </div>
         </div>
-        <a href="#" class="all_past_conferences">All past conferences</a>
+        <a href="{{ url_for('conferences.past_conferences_list') }}" class="all_past_conferences">All past conferences</a>
     </div>
 
 </section>

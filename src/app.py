@@ -1,24 +1,32 @@
 ### library  ==========
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate, MigrateCommand
+from flask_script import Manager
+from flask_security import SQLAlchemyUserDatastore, Security
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 ### local   ===========
 from config import Configuration
-#== app register ==
-from general.blueprint import app as main_app
-from contests.blueprint import app as contest_app
-from conferences.blueprint import app as conferences_app
-from world_skills.blueprint import app as world_skills_app
-from cases.blueprint import app as cases_app
-from forum.blueprint import app as forum_app
-from gallery.blueprint import app as gallery_app
+
+#== models ==
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
 
-app.register_blueprint(main_app, url_prefix='/')
-app.register_blueprint(contest_app, url_prefix='/contest')
-app.register_blueprint(conferences_app, url_prefix='/conferences')
-app.register_blueprint(world_skills_app, url_prefix='/world_skills')
-app.register_blueprint(cases_app, url_prefix='/cases')
-app.register_blueprint(forum_app, url_prefix='/forum')
-app.register_blueprint(gallery_app, url_prefix='/gallery')
+db = SQLAlchemy(app)
+
+migrate = Migrate(app, db)
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
+
+from user import models
+
+admin = Admin(app)
+admin.add_view(ModelView(models.User, db.session))
+
+user_data_store = SQLAlchemyUserDatastore(db, models.User, models.Role)
+security = Security(app, user_data_store)
+
+

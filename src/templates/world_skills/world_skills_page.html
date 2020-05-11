@@ -21,7 +21,7 @@
                 </div>
                 <div class="contest_item_content">
                     <h3 class="contest_item_title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
+                        <a href="{{ url_for('world_skills.contests_instance', id=1) }}">Lorem ipsum dolor sit amet, consectetur</a>
                     </h3>
                     <p class="contest_item_description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -29,11 +29,11 @@
                         cumque excepturi labore quo ratione rem sequi?
                         Alias eveniet ipsum nisi, non perspiciatis porro quia. Quod.
                     </p>
-                    <a href="#" class="contest_item_link_learn_more">Learn more</a>
+                    <a href="{{ url_for('world_skills.contests_instance', id=1) }}" class="contest_item_link_learn_more">Learn more</a>
                 </div>
             </div>
         </div>
-        <a href="#" class="all_contests">All contests</a>
+        <a href="{{ url_for('world_skills.contests_list') }}" class="all_contests">All contests</a>
     </div>
 
 </section>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="past_contest_item_content">
                     <h3 class="past_contest_item_title">
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
+                        <a href="{{ url_for('world_skills.contests_instance', id=1) }}">Lorem ipsum dolor sit amet, consectetur</a>
                     </h3>
                     <p class="past_contest_item_description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -58,11 +58,11 @@
                         cumque excepturi labore quo ratione rem sequi?
                         Alias eveniet ipsum nisi, non perspiciatis porro quia. Quod.
                     </p>
-                    <a href="#" class="past_contest_item_link_learn_more">Learn more</a>
+                    <a href="{{ url_for('world_skills.contests_instance', id=1) }}" class="past_contest_item_link_learn_more">Learn more</a>
                 </div>
             </div>
         </div>
-        <a href="#" class="all_past_contests">All past contests</a>
+        <a href="{{ url_for('world_skills.contests_list') }}" class="all_past_contests">All past contests</a>
     </div>
 
 </section>
