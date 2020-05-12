@@ -67,6 +67,9 @@ header {
     padding: 30px 0;
 
     width: 100%;
+
+    display: flex;
+    align-items: center;
 }
 
 .contest_item {
@@ -318,3 +321,31 @@ header {
 .all_past_contests:hover {
     background-color: rgba(228, 68, 24, 0.79);
 }
+
+/* .arrows {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 110%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrows button {
+    background: none;
+    border: none;
+
+    font-size: 21px;
+    color: #da532c;
+
+    transition: all .2s;
+}
+
+.arrows button:hover {
+    color: rgba(228, 68, 24, 0.79);
+} */

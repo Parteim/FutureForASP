@@ -239,6 +239,8 @@ footer {
 
     overflow: hidden;
 
+    z-index: 101;
+
     transition: all .2s;
 
 }

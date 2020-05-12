@@ -14,25 +14,31 @@
 
     <div class="contest_box">
         <h2 class="contest_main_title">Upcoming contests</h2>
-        <div class="slider_contest">
-            <div class="contest_item">
+        <ul class="slider_contest">
+            <li class="contest_item">
                 <div class="contest_item_img_box">
                     <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="#" class="contest_item_img">
                 </div>
                 <div class="contest_item_content">
                     <h3 class="contest_item_title">
-                        <a href="{{ url_for('contests.contests_instance', id=1) }}">Lorem ipsum dolor sit amet, consectetur</a>
+                        <a href="{{ url_for('contests.contests_instance', id=contest.id) }}">{{ contest.title }}</a>
                     </h3>
                     <p class="contest_item_description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Dignissimos distinctio impedit molestiae! Accusantium aliquid,
-                        cumque excepturi labore quo ratione rem sequi?
-                        Alias eveniet ipsum nisi, non perspiciatis porro quia. Quod.
+                        {{ contest.text }}
                     </p>
-                    <a href="{{ url_for('contests.contests_instance', id=1) }}" class="contest_item_link_learn_more">Learn more</a>
+                    <a href="{{ url_for('contests.contests_instance', id=contest.id) }}" class="contest_item_link_learn_more">Learn
+                        more</a>
                 </div>
-            </div>
-        </div>
+            </li>
+<!--            <li class="arrows">-->
+<!--                <button id="previous">-->
+<!--                    <i class="fas fa-caret-left"></i>-->
+<!--                </button>-->
+<!--                <button id="next">-->
+<!--                    <i class="fas fa-caret-right"></i>-->
+<!--                </button>-->
+<!--            </li>-->
+        </ul>
         <a href="{{ url_for('contests.contests_list') }}" class="all_contests">All contests</a>
     </div>
 
@@ -46,7 +52,8 @@
 
         <ul class="past_contest_list">
             <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
+                <div class="past_contest_item_image"><img
+                        src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
                 <div class="past_contest_item_content">
                     <h3 class="past_contest_item_title">
                         <a href="{{ url_for('contests.contests_instance', id=1) }}">Some past contest</a>
@@ -61,7 +68,8 @@
                 </div>
             </li>
             <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""></div>
+                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/News__image.png') }}"
+                                                          alt=""></div>
                 <div class="past_contest_item_content">
                     <h3 class="past_contest_item_title">
                         <a href="{{ url_for('contests.contests_instance', id=1) }}">Some past contest</a>
@@ -76,7 +84,8 @@
                 </div>
             </li>
             <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
+                <div class="past_contest_item_image"><img
+                        src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
                 <div class="past_contest_item_content">
                     <h3 class="past_contest_item_title">
                         <a href="{{ url_for('contests.contests_instance', id=1) }}">Some past contest</a>

@@ -13,91 +13,25 @@
 <section class="Cases">
 
     <ul class="cases_lis">
+        {% for case in cases %}
+
         <li class="cases_item">
             <div class="case_item_content">
                 <a href="#" class="case_item_link">
-                    <h2 class="case_item_title">Some name of case</h2>
+                    <h2 class="case_item_title">{{ case.title }}</h2>
                 </a>
-                <p class="case_item_date">12.13.20</p>
+                <p class="case_item_date">{{ case.date }}</p>
                 <div class="case_item_header">
-                    <p class="case_item_customer">Customer <span>Some customer</span></p>
+                    <p class="case_item_customer">Customer <span>{{ case.customer }}</span></p>
                     <p class="case_item_executor">Executor <span>Some executor</span></p>
                 </div>
                 <p class="case_item_description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem dolore harum iure
-                    labore, non obcaecati suscipit velit. Animi aut, dolorum molestias officia sed voluptates
-                    voluptatum. Aut ex ipsum laborum?
+                    {{ case.text }}
                 </p>
             </div>
         </li>
-        <li class="cases_item">
-            <div class="case_item_content">
-                <a href="#" class="case_item_link">
-                    <h2 class="case_item_title">Some name of case</h2>
-                </a>
-                <p class="case_item_date">12.13.20</p>
-                <div class="case_item_header">
-                    <p class="case_item_customer">Customer <span>Some customer</span></p>
-                    <p class="case_item_executor">Executor <span>Some executor</span></p>
-                </div>
-                <p class="case_item_description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem dolore harum iure
-                    labore, non obcaecati suscipit velit. Animi aut, dolorum molestias officia sed voluptates
-                    voluptatum. Aut ex ipsum laborum?
-                </p>
-            </div>
-        </li>
-        <li class="cases_item">
-            <div class="case_item_content">
-                <a href="#" class="case_item_link">
-                    <h2 class="case_item_title">Some name of case</h2>
-                </a>
-                <p class="case_item_date">12.13.20</p>
-                <div class="case_item_header">
-                    <p class="case_item_customer">Customer <span>Some customer</span></p>
-                    <p class="case_item_executor">Executor <span>Some executor</span></p>
-                </div>
-                <p class="case_item_description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem dolore harum iure
-                    labore, non obcaecati suscipit velit. Animi aut, dolorum molestias officia sed voluptates
-                    voluptatum. Aut ex ipsum laborum?
-                </p>
-            </div>
-        </li>
-        <li class="cases_item">
-            <div class="case_item_content">
-                <a href="#" class="case_item_link">
-                    <h2 class="case_item_title">Some name of case</h2>
-                </a>
-                <p class="case_item_date">12.13.20</p>
-                <div class="case_item_header">
-                    <p class="case_item_customer">Customer <span>Some customer</span></p>
-                    <p class="case_item_executor">Executor <span>Some executor</span></p>
-                </div>
-                <p class="case_item_description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem dolore harum iure
-                    labore, non obcaecati suscipit velit. Animi aut, dolorum molestias officia sed voluptates
-                    voluptatum. Aut ex ipsum laborum?
-                </p>
-            </div>
-        </li>
-        <li class="cases_item">
-            <div class="case_item_content">
-                <a href="#" class="case_item_link">
-                    <h2 class="case_item_title">Some name of case</h2>
-                </a>
-                <p class="case_item_date">12.13.20</p>
-                <div class="case_item_header">
-                    <p class="case_item_customer">Customer <span>Some customer</span></p>
-                    <p class="case_item_executor">Executor <span>Some executor</span></p>
-                </div>
-                <p class="case_item_description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem dolore harum iure
-                    labore, non obcaecati suscipit velit. Animi aut, dolorum molestias officia sed voluptates
-                    voluptatum. Aut ex ipsum laborum?
-                </p>
-            </div>
-        </li>
+
+        {% endfor %}
     </ul>
 
 </section>
