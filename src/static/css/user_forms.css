@@ -93,3 +93,13 @@ h1 {
     font-size: 30px;
     color: #da532c;
 }
+
+.flashes {
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #757575;
+}

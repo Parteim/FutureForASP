@@ -14,7 +14,7 @@ class Conference(db.Model):
     text = db.Column(db.Text())
     images = db.relationship('Images', secondary=conference_image, backref=db.backref('conference', lazy='dynamic'))
 
-    date = db.Column(db.Date(), default=datetime)
+    date = db.Column(db.Date(), default=datetime.now())
 
     def __repr__(self):
         return f'<{__class__.__name__} id: {self.id}, title: {self.title}>'

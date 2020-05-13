@@ -1,1 +1,15 @@
 {% extends 'general/items_list.html' %}
+
+{% block items_list %}
+{% for item in items %}
+<li class="item">
+    <a href="{{ url_for('conferences.conferences_instance', id=item.id) }}" class="item_link">
+        <h2 class="item_title">{{ item.title }}</h2>
+    </a>
+    <p class="item_description">
+        {{ item.text }}
+    </p>
+    <span class="item_date">{{ item.date }}</span>
+</li>
+{% endfor %}
+{% endblock items_list %}

@@ -20,6 +20,8 @@ class User(db.Model, UserMixin):
 
     case = db.relationship('Case', back_populates='executor')
 
+    posts = db.relationship('Posts', back_populates='author')
+
     def __repr__(self):
         return f'<{__class__.__name__} id: {self.id}, title: {self.email}>'
 

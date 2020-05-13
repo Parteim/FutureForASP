@@ -34,6 +34,8 @@ header {
 .instance_title {
     margin: 20px 0;
 
+    max-width: 75%;
+
     font-size: 31px;
     color: #252424;
 }

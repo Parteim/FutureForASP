@@ -5,7 +5,7 @@
 {% endblock styles %}
 
 {% block titlePage %}
-<h1 class="main_title_contests_page">World skills</h1>
+<h1 class="main_title_contests_page">Конкурсы</h1>
 {% endblock titlePage %}
 
 {% block main %}
@@ -13,7 +13,7 @@
 <section class="Contests">
 
     <div class="contest_box">
-        <h2 class="contest_main_title">Upcoming contests</h2>
+        <h2 class="contest_main_title">Предстоящий конкурс</h2>
         <ul class="slider_contest">
             <li class="contest_item">
                 <div class="contest_item_img_box">
@@ -21,13 +21,12 @@
                 </div>
                 <div class="contest_item_content">
                     <h3 class="contest_item_title">
-                        <a href="{{ url_for('contests.contests_instance', id=contest.id) }}">{{ contest.title }}</a>
+                        <a href="{{ url_for('contests.contests_instance', id=u_cont.id) }}">{{ u_cont.title }}</a>
                     </h3>
                     <p class="contest_item_description">
-                        {{ contest.text }}
+                        {{ u_cont.text }}
                     </p>
-                    <a href="{{ url_for('contests.contests_instance', id=contest.id) }}" class="contest_item_link_learn_more">Learn
-                        more</a>
+                    <a href="{{ url_for('contests.contests_instance', id=u_cont.id) }}" class="contest_item_link_learn_more">Узнать больше</a>
                 </div>
             </li>
 <!--            <li class="arrows">-->
@@ -39,7 +38,7 @@
 <!--                </button>-->
 <!--            </li>-->
         </ul>
-        <a href="{{ url_for('contests.contests_list') }}" class="all_contests">All contests</a>
+        <a href="{{ url_for('contests.contests_list') }}" class="all_contests">Все кокурсы</a>
     </div>
 
 </section>
@@ -48,60 +47,29 @@
 
     <div class="past_contest_box">
 
-        <h2 class="past_contest_main_title">Past contest</h2>
+        <h2 class="past_contest_main_title">Прошедший конкурс</h2>
 
         <ul class="past_contest_list">
+            {% for item in p_cont %}
+
             <li class="past_contest_item">
                 <div class="past_contest_item_image"><img
                         src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
                 <div class="past_contest_item_content">
                     <h3 class="past_contest_item_title">
-                        <a href="{{ url_for('contests.contests_instance', id=1) }}">Some past contest</a>
+                        <a href="{{ url_for('contests.contests_instance', id=item.id) }}">{{ item.title }}</a>
                     </h3>
                     <p class="past_contest_item_text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci aliquid cupiditate debitis, deserunt dicta distinctio,
-                        eaque ex fuga illum laboriosam molestias necessitatibus nobis
-                        nostrum numquam obcaecati perspiciatis repellat sint tenetur!
+                        {{ item.text }}
                     </p>
-                    <span class="past_contest_item_date">10.10.20</span>
+                    <span class="past_contest_item_date">{{ item.start }}/{{ item.end }}</span>
                 </div>
             </li>
-            <li class="past_contest_item">
-                <div class="past_contest_item_image"><img src="{{ url_for('static', filename='img/News__image.png') }}"
-                                                          alt=""></div>
-                <div class="past_contest_item_content">
-                    <h3 class="past_contest_item_title">
-                        <a href="{{ url_for('contests.contests_instance', id=1) }}">Some past contest</a>
-                    </h3>
-                    <p class="past_contest_item_text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci aliquid cupiditate debitis, deserunt dicta distinctio,
-                        eaque ex fuga illum laboriosam molestias necessitatibus nobis
-                        nostrum numquam obcaecati perspiciatis repellat sint tenetur!
-                    </p>
-                    <span class="past_contest_item_date">10.10.20</span>
-                </div>
-            </li>
-            <li class="past_contest_item">
-                <div class="past_contest_item_image"><img
-                        src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
-                <div class="past_contest_item_content">
-                    <h3 class="past_contest_item_title">
-                        <a href="{{ url_for('contests.contests_instance', id=1) }}">Some past contest</a>
-                    </h3>
-                    <p class="past_contest_item_text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci aliquid cupiditate debitis, deserunt dicta distinctio,
-                        eaque ex fuga illum laboriosam molestias necessitatibus nobis
-                        nostrum numquam obcaecati perspiciatis repellat sint tenetur!
-                    </p>
-                    <span class="past_contest_item_date">10.10.20</span>
-                </div>
-            </li>
+
+            {% endfor %}
         </ul>
 
-        <a href="{{ url_for('contests.past_contests_list') }}" class="all_past_contests">All past contests</a>
+        <a href="{{ url_for('contests.past_contests_list') }}" class="all_past_contests">Все прошедшие конкурсы</a>
 
     </div>
 

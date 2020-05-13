@@ -17,7 +17,7 @@ class Images(db.Model):
 
 class News(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    title = db.Column(db.String())
+    title = db.Column(db.String(200))
     text = db.Column(db.Text())
     date = db.Column(db.Date(), default=datetime.now())
 
