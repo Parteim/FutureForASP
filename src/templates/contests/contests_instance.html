@@ -1,1 +1,5 @@
 {% extends 'general/instance.html' %}
+
+{% block date %}
+<span class="instance_date">{{ item.start }}/{{ item.end }}</span>
+{% endblock date %}

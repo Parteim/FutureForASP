@@ -10,7 +10,7 @@ conference_image = db.Table(
 
 class Conference(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    title = db.Column(db.String(255))
+    title = db.Column(db.String(100))
     text = db.Column(db.Text())
     images = db.relationship('Images', secondary=conference_image, backref=db.backref('conference', lazy='dynamic'))
 

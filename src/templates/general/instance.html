@@ -16,28 +16,17 @@
                 {{ item.text }}
             </p>
 
+            {% block date %}
             <span class="instance_date">{{ item.date }}</span>
+            {% endblock date %}
 
         </div>
         <ul class="instance_image_list">
+            {% block images %}
             <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt=""/>
+                <img class="instance_image" src="{{ url_for('static', filename=item.images) }}" alt=""/>
             </li>
-            <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""/>
-            </li>
-            <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt=""/>
-            </li>
-            <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""/>
-            </li>
-            <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt=""/>
-            </li>
-            <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""/>
-            </li>
+            {% endblock images %}
         </ul>
     </div>
 

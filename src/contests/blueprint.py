@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from sqlalchemy import desc
 from datetime import datetime
 
 from .models import Contest
@@ -24,7 +25,7 @@ def contests_page():
 
 @app.route('/contests-list')
 def contests_list():
-    contests = Contest.query.all()
+    contests = Contest.query.order_by(desc(Contest.end))
     return render_template(f'{NAME_APP}/{NAME_APP}_list.html', title='Contests', items=contests)
 
 
@@ -36,7 +37,7 @@ def past_contests_list():
         if i.end < datetime.now().date():
             past_contest.append(i)
 
-    return render_template(f'{NAME_APP}/{NAME_APP}_instance.html', title='Past contests', items=past_contest)
+    return render_template(f'{NAME_APP}/{NAME_APP}_list.html', title='Past contests', items=past_contest)
 
 
 @app.route('/contest/item=<id>')

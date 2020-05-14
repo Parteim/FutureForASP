@@ -6,7 +6,7 @@ class WorldSkillsContest(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     title = db.Column(db.String(255))
     text = db.Column(db.Text())
-    images = db.Column(db.String(255))
+    images = db.Column(db.String(255), default='img/recipe__image.png')
 
     date = db.Column(db.Date(), default=datetime.now())
 

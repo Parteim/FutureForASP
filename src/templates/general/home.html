@@ -10,15 +10,14 @@
 
 {% block main %}
 
+{% if ads %}
 <section class="Ads">
     <article class="ads_box">
-        <h2 class="ads_title">Ads</h2>
+        <h2 class="ads_title">Объявление</h2>
         <div class="ads_content">
             <p class="ads_text">
                 <span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aperiam illo modi sint. Aperiam dicta eos laboriosam quisquam sit. Accusamus ad
-                    aliquid autem consequuntur eos minima optio repellendus sed sunt tempora.
+                    {{ ads.text }}
                 </span>
             </p>
             <div class="ads_image_box">
@@ -28,51 +27,36 @@
 
     </article>
 </section>
+{% endif %}
 
 <section class="News">
     <article class="news_box">
         <div class="news_head">
             <a href="{{ url_for('general.news') }}" class="news_link-icon"><i class="fas fa-newspaper"></i></a>
-            <a href="{{ url_for('general.news') }}" class="news_link"><h2 class="news_title">News</h2></a>
+            <a href="{{ url_for('general.news') }}" class="news_link"><h2 class="news_title">Новости</h2></a>
             <p class="news_description">
                 <span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Aperiam enim esse exercitationem iusto maiores
+                    Узнавайте о жизни техникума на нашем сайте
                 </span>
             </p>
         </div>
-        <div class="news_content">
-            <div class="news_item">
+        <ul class="news_content">
+            {% for news in news_list %}
+            <li class="news_item">
                 <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
                 </div>
                 <div class="news_title-date">
-                    <a href="{{ url_for('general.news_item', id=1) }}"><h3 class="news_item_title">Some news</h3></a>
-                    <span class="news_item_date">some date</span>
+                    <a href="{{ url_for('general.news_item', id=news.id) }}"><h3 class="news_item_title">{{ news.title }}</h3></a>
+                    <span class="news_item_date">{{ news.date }}</span>
                 </div>
                 <p class="news_item_text">
                     <span>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi ea eaque esse,
-                        expedita fugiat fugit ipsa iure modi nam obcaecati
-                        officia quis, sint ullam ut veniam voluptas voluptatem.
+                        {{ news.text }}
                     </span>
                 </p>
-            </div>
-            <div class="news_item">
-                <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                </div>
-                <div class="news_title-date">
-                    <a href="{{ url_for('general.news_item', id=2) }}"><h3 class="news_item_title">Some news</h3></a>
-                    <span class="news_item_date">some date</span>
-                </div>
-                <p class="news_item_text">
-                    <span>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi ea eaque esse,
-                        expedita fugiat fugit ipsa iure modi nam obcaecati
-                        officia quis, sint ullam ut veniam voluptas voluptatem.
-                    </span>
-                </p>
-            </div>
-        </div>
+            </li>
+            {% endfor %}
+        </ul>
     </article>
 </section>
 
@@ -80,19 +64,18 @@
     <article class="recipe_box">
 
         <div class="recipe_image_box">
-            <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""></div>
+            <img src="{{ url_for('static', filename=recipe.images) }}" alt=""></div>
         <div class="recipe_content">
-            <a href="{{ url_for('general.recipes') }}" class="recipes_link-icon"><i class="fas fa-concierge-bell"></i></a>
-            <a href="{{ url_for('general.recipes_item', id=1) }}" class="recipes_link-title"><h2 class="recipe_title">Some recipe</h2></a>
+            <a href="{{ url_for('general.recipes') }}" class="recipes_link-icon"><i
+                    class="fas fa-concierge-bell"></i></a>
+            <a href="{{ url_for('general.recipes_item', id=recipe.id) }}" class="recipes_link-title"><h2
+                    class="recipe_title">{{ recipe.title }}</h2></a>
             <p class="recipe_text">
                 <span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Alias aliquam cumque, dicta dolor earum eligendi enim est excepturi,
-                    impedit, necessitatibus quo similique voluptatem. Aut corporis eaque
-                    eveniet, illo perferendis vel?
+                    {{ recipe.text }}
                 </span>
             </p>
-            <a href="{{ url_for('general.recipes') }}" class="recipes_link">More recipes</a>
+            <a href="{{ url_for('general.recipes') }}" class="recipes_link">Больше рецептов</a>
         </div>
     </article>
 </section>
@@ -101,7 +84,7 @@
     <article class="gallery_box">
         <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_link-icon"><i class="fas fa-images"></i></a>
         <a href="{{ url_for('gallery.gallery_page') }}" class="gallery_link">
-            <h2 class="gallery_title">Gallery</h2>
+            <h2 class="gallery_title">Галерея</h2>
         </a>
         <div class="gallery_content">
             <div class="gallery_image_box">

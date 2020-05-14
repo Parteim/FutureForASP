@@ -54,10 +54,10 @@ header {
 
     position: absolute;
     top: 50%;
-    left: -50%;
+    left: -20%;
     transform: translate(-50%, 0);
 
-    width: 40%;
+    width: 20%;
     height: 3px;
 
     background-color: rgba(0, 0, 0, .63);
@@ -68,10 +68,10 @@ header {
 
     position: absolute;
     top: 50%;
-    right: -190%;
+    right: -85%;
     transform: translate(-50%, 0);
 
-    width: 100%;
+    width: 50%;
     height: 3px;
 
     background-color: rgba(0, 0, 0, .63);
@@ -198,8 +198,8 @@ header {
 
 .news_content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .news_item {
@@ -228,11 +228,13 @@ header {
     margin: 5px 0;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
 .news_item_title {
+    max-width: 300px;
+
     text-transform: uppercase;
     font-weight: 500;
     font-size: 21px;
@@ -355,7 +357,7 @@ header {
 }
 
 .recipes_link {
-    padding: 5px 10px;
+    padding: 5px 30px;
     margin: 20px 0;
 
     width: 40%;
