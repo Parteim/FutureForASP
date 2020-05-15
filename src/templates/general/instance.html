@@ -11,10 +11,16 @@
 
     <div class="instance_content">
         <div class="instance_text_box">
+            {% block item_title %}
             <h2 class="instance_title">{{ item.title }}</h2>
+            {% endblock item_title %}
+
             <p class="instance_text">
                 {{ item.text }}
             </p>
+
+            {% block item_extention %}
+            {% endblock %}
 
             {% block date %}
             <span class="instance_date">{{ item.date }}</span>

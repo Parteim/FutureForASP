@@ -1,0 +1,53 @@
+{% extends 'general/instance.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/instance.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/instance_post.css') }}">
+{% endblock styles %}
+
+{% block item_title %}
+<div class="author-title">
+    <div class="author_box">
+        <div class="author_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""></div>
+        <h2 class="author_name">{{ item.author.first_name }} <span>{{ item.author.last_name }}</span></h2>
+    </div>
+    <h2 class="instance_title">{{ item.title }}</h2>
+</div>
+{% endblock item_title %}
+
+{% block images %}
+{% for image in item.images %}
+<li class="instance_image_item">
+    <img class="instance_image" src="{{ url_for('static', filename=image.url) }}" alt=""/>
+</li>
+{% endfor %}
+{% endblock images %}
+
+{% block item_extention %}
+{% if current_user.id == item.author.id %}
+<a href="{{ url_for('forum.edit_post', id=item.id) }}" class="edit_post_link">Редактировать пост <i
+        class="fas fa-edit"></i></a>
+{% endif %}
+{% endblock %}
+
+<section class="Comments">
+    <ul class="comments_list">
+        <li class="comment_item">
+            <div class="comment_author">
+                <div class="image_author"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+                </div>
+                <h3 class="name_author">Some first name <span>Some last name</span></h3>
+            </div>
+            <p class="comment_text">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur atque culpa
+                    dignissimos eius, esse fuga fugit hic labore nam nemo nobis numquam obcaecati, quae ratione
+                    rem repudiandae sint voluptates.</span>
+            </p>
+        </li>
+    </ul>
+</section>
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/forum.js') }}"></script>
+{% endblock scripts %}

@@ -1,0 +1,30 @@
+body {
+    background-color: #f5f5f5;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.block_404 {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 300px;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #da532c;
+
+    border-radius: 4px;
+}
+
+.title_404 {
+    font-size: 50px;
+    color: #1b1b1b;
+    letter-spacing: 3px;
+}

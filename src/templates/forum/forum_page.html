@@ -13,72 +13,38 @@
 <section class="Forum">
 
     <div class="forum_menu">
-        <form action="#" class="search_post_form">
+        <form action="{{ url_for('forum.search_post') }}" class="search_post_form" method="POST">
             <label for="search_post">
             </label>
-            <input type="text" id="search_post">
+            <input name="condition" type="text" id="search_post">
             <button type="submit" class="button_search">
                 <i class="fas fa-search"></i>
             </button>
 
         </form>
+        {% if current_user.is_authenticated %}
         <button id="create_post_btn">Создать пост <span><i class="fas fa-pen-alt"></i></span></button>
+        {% endif %}
     </div>
 
     <ul class="posts_list">
+        {% for post in posts %}
         <li class="post">
             <div class="author_box">
                 <a class="author_link" href="#">
                     <div class="author_img_box">
                         <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
                     </div>
-                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
+                    <h3 class="author">{{ post.author.first_name }} <span>{{ post.author.last_name }}</span></h3>
                 </a>
             </div>
-            <a class="post_link" href="#">
-                <h2 class="post_title">Some title of post</h2>
+            <a class="post_link" href="{{ url_for('forum.instance_post', id=post.id) }}">
+                <h2 class="post_title">{{ post.title }}</h2>
             </a>
-            <p class="post_date_created">12.12.20</p>
+            <p class="post_date_created">{{ post.date }}</p>
             <div class="post_content">
                 <div class="post_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
-                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
-                    totam, ullam vel vitae voluptas.
-                </div>
-                <ul class="post_img_list">
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
-                             >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                             >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                             >
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="post">
-            <div class="author_box">
-                <a class="author_link" href="#">
-                    <div class="author_img_box">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                    </div>
-                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
-                </a>
-            </div>
-            <a class="post_link" href="#">
-                <h2 class="post_title">Some title of post</h2>
-            </a>
-            <p class="post_date_created">12.12.20</p>
-            <div class="post_content">
-                <div class="post_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
-                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
-                    totam, ullam vel vitae voluptas.
+                    {{ post.text }}
                 </div>
                 <ul class="post_img_list">
                     <li class="post_image_item">
@@ -96,87 +62,18 @@
                 </ul>
             </div>
         </li>
-        <li class="post">
-            <div class="author_box">
-                <a class="author_link" href="#">
-                    <div class="author_img_box">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                    </div>
-                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
-                </a>
-            </div>
-            <a class="post_link" href="#">
-                <h2 class="post_title">Some title of post</h2>
-            </a>
-            <p class="post_date_created">12.12.20</p>
-            <div class="post_content">
-                <div class="post_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
-                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
-                    totam, ullam vel vitae voluptas.
-                </div>
-                <ul class="post_img_list">
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
-                        >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                        >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                        >
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="post">
-            <div class="author_box">
-                <a class="author_link" href="#">
-                    <div class="author_img_box">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-                    </div>
-                    <h3 class="author">Some first Name <span>Some last Name</span></h3>
-                </a>
-            </div>
-            <a class="post_link" href="#">
-                <h2 class="post_title">Some title of post</h2>
-            </a>
-            <p class="post_date_created">12.12.20</p>
-            <div class="post_content">
-                <div class="post_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequatur, dicta! Adipisci
-                    alias animi consequuntur culpa dolore maxime minus, nemo quibusdam quos repellendus rerum tempora
-                    totam, ullam vel vitae voluptas.
-                </div>
-                <ul class="post_img_list">
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
-                        >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                        >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                        >
-                    </li>
-                </ul>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 
 </section>
 
 <section id="Create_post" class="Create_post">
     <h3 class="create_post_form_title">Create post</h3>
-    <form action="#" class="create_post_form">
+    <form action="{{ url_for('forum.create_post') }}" class="create_post_form" method="POST">
         <label for="title_create_post" class="title_create_post"></label>
         <label for="text_create_post" class="label text_create_post"></label>
-        <input placeholder="Title" type="text" id="title_create_post">
-        <textarea placeholder="Text" id="text_create_post"></textarea>
+        <input name="title" placeholder="Title" type="text" id="title_create_post">
+        <textarea name="text" placeholder="Text" id="text_create_post"></textarea>
         <button id="attach_item_btn">Attach item <i class="fas fa-paperclip"></i></button>
         <button type="submit" class="agree_create_post">Create</button>
     </form>

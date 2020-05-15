@@ -7,3 +7,5 @@ class Configuration:
     SECURITY_PASSWORD_SALT = 'salt'
     SECURITY_PASSWORD_HASH = 'sha512_crypt'
 
+    UPLOAD_FOLDER = 'media'
+    ALLOWED_EXTENSIONS = {'pdf', 'docs', 'doc', 'jpg', 'png'}

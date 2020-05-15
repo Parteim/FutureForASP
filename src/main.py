@@ -12,7 +12,7 @@ from user.blueprint import app as user_app
 
 
 app.register_blueprint(main_app, url_prefix='/')
-app.register_blueprint(contest_app, url_prefix='/contest')
+app.register_blueprint(contest_app, url_prefix='/contests')
 app.register_blueprint(conferences_app, url_prefix='/conferences')
 app.register_blueprint(world_skills_app, url_prefix='/world_skills')
 app.register_blueprint(cases_app, url_prefix='/cases')
