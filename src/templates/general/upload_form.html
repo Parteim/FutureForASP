@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/9b74a98d1b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload_form.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    <form action="" class="ipload-form" method="POST" enctype="multipart/form-data">
+        <label class="upload-label" for="upload-input">
+            <input multiple name="file[]" id="upload-input" type="file">
+            <i class="fas fa-file-upload"></i>
+        </label>
+        <button class="upload-bnt" type="submit">upload</button>
+    </form>
+
+</body>
+</html>

@@ -29,6 +29,8 @@ header {
 
 .instance_image_list {
     width: 45%;
+
+    max-width: 700px;
 }
 
 .instance_title {
@@ -59,6 +61,10 @@ header {
 
     max-width: 30%;
     max-height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     overflow: hidden;
 

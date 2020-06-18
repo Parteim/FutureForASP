@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    {% endblock styles %}
+
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<section id="Sign_in">
+    <form action="{{ url_for('general.register') }}" class="sign_up_form sign_form" method="POST">
+        <h3 class="sign_up_title">Регистрация</h3>
+        <div class="sign_up_form_container">
+            <label for="email_address"></label>
+            <label for="first_name"></label>
+            <label for="last_name"></label>
+            <label for="password"></label>
+            <label for="repeat_password"></label>
+            <input name="email" placeholder="E-mail" type="email" id="email_address">
+            <input name="first_name" placeholder="Имя" type="text" id="first_name">
+            <input name="last_name" placeholder="Фамилия" type="text" id="last_name">
+            <label id="you_are_student_label" for="you_are_student">Вы студент?</label>
+            <input name="student" type="checkbox" id="you_are_student">
+            <label id="label_course" for="course">Курс <input min="0" max="4" type="number" id="course"></label>
+            <input name="password" placeholder="Пароль " type="password" id="password">
+            <input name="repeat_password" placeholder="Повторить пароль " type="password" id="repeat_password">
+        </div>
+        <button type="submit" id="create_account">Зарегистрироваться <i class="fas fa-user-plus"></i></button>
+    </form>
+</section>
+
+</body>
+</html>

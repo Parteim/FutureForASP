@@ -1,3 +1,7 @@
+.Instance {
+    padding-bottom: 0;
+}
+
 .author_box {
     display: flex;
     align-items: center;
@@ -50,3 +54,62 @@
     color: #252424;
 
 }
+
+.instance_image_list {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.Comments {
+    margin: 0 auto;
+
+    width: 80%;
+}
+
+.comment_item {
+    width: 100%;
+}
+
+.comment_author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    color: #595959;
+}
+
+.image_author {
+    position: relative;
+
+    margin-right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f5f5f5;
+    
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.image_author img {
+    width: 200%;
+}
+
+.comment_text {
+    padding: 10px;
+
+    font-size: 16px;
+    color: #5b5959;
+}
+
+.edit_post_link {
+    margin-left: 5%;
+}
+

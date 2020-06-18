@@ -19,9 +19,6 @@
                 {{ item.text }}
             </p>
 
-            {% block item_extention %}
-            {% endblock %}
-
             {% block date %}
             <span class="instance_date">{{ item.date }}</span>
             {% endblock date %}
@@ -37,6 +34,9 @@
     </div>
 
 </section>
+
+{% block item_extention %}
+{% endblock %}
 
 <section id="Reveal_img">
     <img id="reveal_image" src="" alt=""/>

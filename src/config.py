@@ -1,3 +1,4 @@
+
 class Configuration:
     DEBUG = True
     SECRET_KEY = 'fuck'
@@ -7,5 +8,5 @@ class Configuration:
     SECURITY_PASSWORD_SALT = 'salt'
     SECURITY_PASSWORD_HASH = 'sha512_crypt'
 
-    UPLOAD_FOLDER = 'media'
+    UPLOAD_FOLDER = 'C:/Users/JarAdmin/Desktop/Projects/FutureForASP/src/static/media/'
     ALLOWED_EXTENSIONS = {'pdf', 'docs', 'doc', 'jpg', 'png'}

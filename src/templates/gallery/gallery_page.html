@@ -13,30 +13,11 @@
 
 <section class="Gallery">
     <ul class="gallery_list">
+        {% for item in items %}
         <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
+            <img class="instance_image" src="{{ url_for('static', filename=item.url) }}" alt="">
         </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-        </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-        </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-        </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-        </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-        </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
-        </li>
-        <li class="gallery_item">
-            <img class="instance_image" src="{{ url_for('static', filename='img/recipe__image.png') }}" alt="">
-        </li>
+        {% endfor %}
     </ul>
 </section>
 
