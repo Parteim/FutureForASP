@@ -47,18 +47,12 @@
                     {{ post.text }}
                 </div>
                 <ul class="post_img_list">
+                    {% for image in post.files %}
                     <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/News__image.png') }}" alt=""
+                        <img src="{{ url_for('static', filename=image.url) }}" alt=""
                         >
                     </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                        >
-                    </li>
-                    <li class="post_image_item">
-                        <img src="{{ url_for('static', filename='img/recipe__image.png') }}" alt=""
-                        >
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </li>
@@ -68,19 +62,19 @@
 </section>
 
 <section id="Create_post" class="Create_post">
-    <h3 class="create_post_form_title">Create post</h3>
+    <h3 class="create_post_form_title">Создать пост</h3>
     <form action="{{ url_for('forum.create_post') }}" class="create_post_form" method="POST"
           enctype="multipart/form-data">
         <label for="title_create_post" class="title_create_post"></label>
         <label for="text_create_post" class="label text_create_post"></label>
-        <input name="title" placeholder="Title" type="text" id="title_create_post">
-        <textarea name="text" placeholder="Text" id="text_create_post"></textarea>
+        <input name="title" placeholder="Заголовок" type="text" id="title_create_post">
+        <textarea name="text" placeholder="Текст" id="text_create_post"></textarea>
         <label class="attach_item_label" for="attach_item_btn">
             <input name="files[]" type="file" id="attach_item_btn" accept="image/*" multiple>
-            <span>Attach item  </span>
+            <span>Прикрепить файл </span>
             <i class="fas fa-paperclip"></i>
         </label>
-        <button type="submit" class="agree_create_post">Create</button>
+        <button type="submit" class="agree_create_post">Создать</button>
     </form>
     <button id="close_create_post_form"><i class="fas fa-times"></i></button>
 </section>

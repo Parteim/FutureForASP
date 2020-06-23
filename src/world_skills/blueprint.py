@@ -42,5 +42,5 @@ def past_contests_list():
 
 @app.route('/contest/item=<id>')
 def contests_instance(id):
-    contest = WorldSkillsContest.query.filter_by(id=id)
+    contest = WorldSkillsContest.query.filter_by(id=id).first()
     return render_template(f'{NAME_APP}/contests_instance.html', title='Contests', item=contest)

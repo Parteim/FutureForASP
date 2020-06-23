@@ -5,7 +5,7 @@ import os
 
 import config
 
-from .models import Posts, PostsFiles, db
+from .models import Posts, PostsFiles, db, Comments
 
 NAME_APP = 'forum'
 app = Blueprint(NAME_APP, __name__)
@@ -56,10 +56,19 @@ def create_post():
     return redirect(url_for('forum.forum_page'))
 
 
-@app.route('/edit-post/<id>')
+@app.route('/edit-post/<id>', methods=['POST'])
 @login_required
 def edit_post(id):
-    pass
+    title = request.form['title']
+    text = request.form['text']
+    try:
+        query = db.session.query(Posts).filter(Posts.id == id). \
+            update({Posts.title: title, Posts.text: text}, synchronize_session=False)
+        db.session.commit()
+    except Exception:
+        db.session.rollback()
+        return redirect(url_for('forum.instance_post', id=id))
+    return redirect(url_for('forum.instance_post', id=id))
 
 
 @app.route('/instance-post/<id>')
@@ -77,3 +86,14 @@ def search_post():
     posts.extend(Posts.query.filter(Posts.text.like(f'%{condition}%')))
     return render_template(f'{NAME_APP}/forum_page.html', title='Forum', posts=posts)
 
+
+@app.route('/create-comment/<id>', methods=['POST'])
+def create_comment(id):
+    comment = Comments(
+        user_id=current_user.id,
+        post_id=id,
+        text=request.form['text'],
+    )
+    db.session.add(comment)
+    db.session.commit()
+    return redirect(url_for('forum.instance_post', id=id))

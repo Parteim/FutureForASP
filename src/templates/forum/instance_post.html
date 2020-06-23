@@ -25,28 +25,57 @@
 
 {% block item_extention %}
 {% if current_user.id == item.author.id %}
-<a href="{{ url_for('forum.edit_post', id=item.id) }}" class="edit_post_link">Редактировать пост <i
-        class="fas fa-edit"></i></a>
+<button id="create_post_btn" class="edit_post_link">Редактировать пост <i
+        class="fas fa-edit"></i></button>
 {% endif %}
 
 <section class="Comments">
+    <form class="comment_form" action="{{ url_for('forum.create_comment', id=item.id) }}" method="POST">
+
+        <h4 class="title_comment_form">Комментарий:</h4>
+
+        <textarea placeholder="Текст" class="comment_text_input" name="text"></textarea>
+
+        <button type="submit" class="create_comment">Отправить</button>
+        
+    </form>
+    
     <ul class="comments_list">
+        {% for comment in item.comment %}
         <li class="comment_item">
             <div class="comment_author">
                 <div class="image_author"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
                 </div>
-                <h3 class="name_author">Some first name <span>Some last name</span></h3>
+                <h3 class="name_author">{{ comment.author.first_name }} <span>{{ comment.author.last_name }}</span></h3>
             </div>
             <p class="comment_text">
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur atque culpa
-                    dignissimos eius, esse fuga fugit hic labore nam nemo nobis numquam obcaecati, quae ratione
-                    rem repudiandae sint voluptates.</span>
+                <span>{{ comment.text }}</span>
             </p>
         </li>
+        {% endfor %}
     </ul>
+</section>
+
+<section id="Create_post" class="Create_post">
+    <h3 class="create_post_form_title">Редактировать пост</h3>
+    <form action="{{ url_for('forum.edit_post', id=item.id) }}" class="create_post_form" method="POST"
+          enctype="multipart/form-data">
+        <label for="title_create_post" class="title_create_post"></label>
+        <label for="text_create_post" class="label text_create_post"></label>
+        <input name="title" placeholder="Заголовок" type="text" id="title_create_post" value="{{ item.title }}">
+        <textarea name="text" placeholder="Текст" id="text_create_post">{{ item.text }}</textarea>
+<!--        <label class="attach_item_label" for="attach_item_btn">-->
+<!--            <input name="files[]" type="file" id="attach_item_btn" accept="image/*" multiple>-->
+<!--            <span>Прикрепить файл </span>-->
+<!--            <i class="fas fa-paperclip"></i>-->
+<!--        </label>-->
+        <button type="submit" class="agree_create_post">Применить</button>
+    </form>
+    <button id="close_create_post_form"><i class="fas fa-times"></i></button>
 </section>
 {% endblock item_extention %}
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/instance.js') }}"></script>
+<script src="{{ url_for('static', filename='js/forum.js') }}"></script>
 {% endblock scripts %}

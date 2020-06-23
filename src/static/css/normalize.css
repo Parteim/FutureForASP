@@ -18,7 +18,7 @@ ul, menu, nav {
     padding: 0;
 }
 
-button, input {
+button, input, textarea {
     outline: none;
 }
 

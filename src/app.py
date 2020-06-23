@@ -39,6 +39,47 @@ class ForumView(BaseView):
         return self.render('admin/forum.html')
 
 
+class AllImages(BaseView):
+    @expose('/')
+    def index(self):
+        items = general_models.Images.query.all()
+        return self.render('admin/images/list_images.html', items=items)
+
+    @expose('/remove', methods=['POST'])
+    def remove(self):
+        item = general_models.Images.query.filter(general_models.Images.id == request.form['id']).first()
+        db.session.delete(item)
+        db.session.commit()
+        return redirect('/admin/images')
+
+    @expose('/create', methods=['POST', 'GET'])
+    def create(self):
+        if request.method == 'POST':
+            files = request.files.getlist('files[]')
+            print('Something wrong')
+            for file in files:
+                condition = True
+                counter = 0
+                while condition:
+                    filename = file.filename
+                    if filename not in os.listdir(Configuration.UPLOAD_FOLDER + 'Images'):
+                        file_path = Configuration.UPLOAD_FOLDER + 'Images/' + filename
+                        condition = False
+                    else:
+                        counter += 1
+                        file_path = Configuration.UPLOAD_FOLDER + 'Images/' + str(counter) + filename
+                        condition = False
+                file.save(file_path)
+                url = file_path.split('static')[1]
+                image = general_models.Images(
+                    url=url,
+                    date=datetime.now()
+                )
+                db.session.add(image)
+                db.session.commit()
+        return self.render('admin/images/create_images.html')
+
+
 class GalleryView(BaseView):
     @expose('/')
     def index(self):
@@ -47,7 +88,10 @@ class GalleryView(BaseView):
 
     @expose('/remove', methods=['POST'])
     def remove(self):
-        return redirect('admin.GalleryView')
+        item = gallery_models.Photos.query.filter(gallery_models.Photos.id==request.form['id']).first()
+        db.session.delete(item)
+        db.session.commit()
+        return redirect('/admin/Photo')
 
     @expose('/create', methods=['POST', 'GET'])
     def create(self):
@@ -99,7 +143,7 @@ admin.add_view(AdminView(models.Role, db.session, category='User'))
 admin.add_view(AdminView(cases_models.Case, db.session))
 admin.add_view(AdminView(conferences_models.Conference, db.session))
 admin.add_view(AdminView(contests_models.Contest, db.session))
-admin.add_view(AdminView(general_models.Images, db.session, category='General'))
+# admin.add_view(AdminView(general_models.Images, db.session, category='General'))
 admin.add_view(AdminView(general_models.News, db.session, category='General'))
 admin.add_view(AdminView(general_models.Recipes, db.session, category='General'))
 admin.add_view(AdminView(general_models.Ads, db.session, category='General'))
@@ -107,8 +151,8 @@ admin.add_view(AdminView(world_skills_models.WorldSkillsContest, db.session))
 admin.add_view(AdminView(forum_models.Posts, db.session, category="Forum"))
 admin.add_view(AdminView(forum_models.Comments, db.session, category="Forum"))
 admin.add_view(AdminView(forum_models.PostsFiles, db.session, category="Forum"))
-admin.add_view(AdminView(gallery_models.Photos, db.session, category="Gallery"))
 admin.add_view(GalleryView(name='Gallery', endpoint='Photo'))
+admin.add_view(AllImages(name='Images', endpoint='images', category='General'))
 # admin.add_view(ForumView(name='Forum', endpoint='analytics')
 
 user_data_store = SQLAlchemyUserDatastore(db, models.User, models.Role)

@@ -60,12 +60,8 @@ def register():
         f_name = request.form['first_name']
         l_name = request.form['last_name']
         email = request.form['email']
-        student = request.form['student']
         password = request.form['password']
         a_password = request.form['repeat_password']
-        print(
-            f'student: {student}'
-        )
 
         if password == a_password:
             user_data_store.create_user(

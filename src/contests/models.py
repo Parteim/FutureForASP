@@ -12,6 +12,7 @@ class Contest(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     title = db.Column(db.String(120))
     text = db.Column(db.Text())
+    file = db.Column(db.String(255))
     images = db.relationship('Images', secondary=contest_image, backref=db.backref('contest', lazy='dynamic'))
 
     start = db.Column(db.Date())

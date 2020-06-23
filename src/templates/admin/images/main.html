@@ -1,0 +1,20 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+<ul class="nav nav-tabs actions-nav">
+    {% block is_active %}
+    <li class="active">
+        <a href="">List</a>
+    </li>
+
+    <li>
+        <a href="/admin/images/create" title="Create New Record">Create</a>
+    </li>
+    {% endblock is_active %}
+
+</ul>
+
+{% block main %}
+
+{% endblock main %}
+{% endblock %}
+

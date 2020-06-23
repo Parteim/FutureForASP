@@ -1,0 +1,38 @@
+{% extends 'admin/images/main.html' %}
+
+{% block is_active %}
+<li class="">
+    <a href="/admin/images">List</a>
+</li>
+
+
+<li class="active">
+    <a href="/admin/images/create" title="Create New Record">Create</a>
+</li>
+{% endblock is_active %}
+
+{% block main %}
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="control-group">
+        <div class="control-label">
+            <label for="url">image
+                &nbsp;
+            </label>
+        </div>
+        <div class="controls">
+            <div>
+                <input id="url" name="files[]" type="file" value="" multiple>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" class="btn btn-primary" value="Save">
+            <a href="/admin/postsfiles/" class="btn btn-danger">Cancel</a>
+        </div>
+    </div>
+</form>
+
+{% endblock main %}
