@@ -16,6 +16,7 @@ header {
     margin: 0 auto;
 
     width: 90%;
+    min-height: 300px;
 
     display: flex;
     justify-content: space-between;
@@ -28,9 +29,8 @@ header {
 }
 
 .instance_image_list {
-    width: 45%;
-
     max-width: 700px;
+    min-height: 200px;
 }
 
 .instance_title {
@@ -118,3 +118,28 @@ header {
 
     box-shadow: 1px 1px 10px rgba(49, 45, 45, 0.55);
 }
+
+.instance_file_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.instance_file {
+    
+    color: #e44418;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: all .2s;
+}
+
+.instance_file:hover {
+    color: rgba(228, 68, 24, 0.79);    
+}
+
+.lists {
+    width: 40%;
+}
+

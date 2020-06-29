@@ -4,10 +4,15 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_security import SQLAlchemyUserDatastore, Security, current_user
+## flask-admin ==
 from flask_admin import Admin, BaseView, expose, AdminIndexView
+from flask_admin.form.upload import FileUploadField
+from flask_admin.form import BaseForm
 from flask_admin.contrib.sqla import ModelView
+# ==
 import os
 from datetime import datetime
+from werkzeug.utils import secure_filename
 
 ### local   ===========
 from config import Configuration
@@ -88,7 +93,7 @@ class GalleryView(BaseView):
 
     @expose('/remove', methods=['POST'])
     def remove(self):
-        item = gallery_models.Photos.query.filter(gallery_models.Photos.id==request.form['id']).first()
+        item = gallery_models.Photos.query.filter(gallery_models.Photos.id == request.form['id']).first()
         db.session.delete(item)
         db.session.commit()
         return redirect('/admin/Photo')

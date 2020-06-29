@@ -43,10 +43,16 @@
         <ul class="news_content">
             {% for news in news_list %}
             <li class="news_item">
+                {% if news.images %}
+                <div class="news_image_box"><img src="{{ url_for('static', filename=news.images[0].url) }}" alt="">
+                </div>
+                {% else %}
                 <div class="news_image_box"><img src="{{ url_for('static', filename='img/News__image.png') }}" alt="">
                 </div>
+                {% endif %}
                 <div class="news_title-date">
-                    <a href="{{ url_for('general.news_item', id=news.id) }}"><h3 class="news_item_title">{{ news.title }}</h3></a>
+                    <a href="{{ url_for('general.news_item', id=news.id) }}"><h3 class="news_item_title">{{ news.title
+                        }}</h3></a>
                     <span class="news_item_date">{{ news.date }}</span>
                 </div>
                 <p class="news_item_text">

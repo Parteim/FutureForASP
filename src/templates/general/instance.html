@@ -24,13 +24,28 @@
             {% endblock date %}
 
         </div>
-        <ul class="instance_image_list">
-            {% block images %}
-            <li class="instance_image_item">
-                <img class="instance_image" src="{{ url_for('static', filename=item.images) }}" alt=""/>
-            </li>
-            {% endblock images %}
-        </ul>
+        <div class="lists">
+
+            <ul class="instance_image_list">
+                {% block images %}
+                {% for image in item.images %}
+                <li class="instance_image_item">
+                    <img class="instance_image" src="{{ url_for('static', filename=image.url) }}" alt=""/>
+                </li>
+                {% endfor%}
+                {% endblock images %}
+            </ul>
+            <ul class="instance_file_list">
+
+                <!--                <li class="instance_file_item">-->
+                <!--                    <a title="download" download="#" class="instance_file">-->
+                <!--                        <i class="fas fa-file"></i>-->
+                <!--                    </a>-->
+                <!--                </li>-->
+
+            </ul>
+
+        </div>
     </div>
 
 </section>

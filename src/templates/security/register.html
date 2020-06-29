@@ -8,12 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_forms.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
     {% endblock styles %}
 
     <title>{{ title }}</title>
 </head>
 <body>
+
+<a href="/" class="home">
+    <i class="fas fa-home"></i> На главную
+</a>
 
 <section id="Sign_in">
     <form action="{{ url_for('general.register') }}" class="sign_up_form sign_form" method="POST">
